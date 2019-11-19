@@ -2,6 +2,7 @@
   import Header from "./UI/Header.svelte";
   import MeetupGrid from "./Meetups/MeetupGrid.svelte";
   import TextInput from "./UI/TextInput.svelte";
+  import Button from "./UI/Button.svelte";
 
   let title = "";
   let subTitle = "";
@@ -50,13 +51,19 @@
       address: address,
       contactEmail: email
     };
-    meetups = [...meetups, newMeetup];
+    meetups = [newMeetup, ...meetups];
   }
 </script>
 
 <style>
   main {
     margin-top: 5rem;
+  }
+
+  form {
+    width: 30rem;
+    max-width: 90%;
+    margin: auto;
   }
 </style>
 
@@ -68,26 +75,31 @@
       id="title"
       label="Title"
       value={title}
+      type="text"
       on:input={event => (title = event.target.value)} />
     <TextInput
       id="sub-title"
       label="Sub Title"
       value={subTitle}
+      type="text"
       on:input={event => (subTitle = event.target.value)} />
     <TextInput
       id="address"
       label="Address"
       value={address}
+      type="text"
       on:input={event => (address = event.target.value)} />
     <TextInput
       id="image-url"
       label="Image URL"
       value={imageUrl}
+      type="text"
       on:input={event => (imageUrl = event.target.value)} />
     <TextInput
       id="email"
       label="Email"
       value={email}
+      type="email"
       on:input={event => (email = event.target.value)} />
     <TextInput
       controlType="textarea"
@@ -95,7 +107,7 @@
       label="Description"
       value={description}
       on:input={event => (description = event.target.value)} />
-    <button type="submit">Save</button>
+    <Button type="submit" caption="Submit" />
   </form>
   <MeetupGrid {meetups} />
 </main>

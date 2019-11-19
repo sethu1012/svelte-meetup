@@ -1,9 +1,10 @@
 <script>
-  export let controlType;
-  export let id;
-  export let label;
-  export let rows;
-  export let value;
+  export let controlType = "input";
+  export let id = "";
+  export let label = "";
+  export let rows = 3;
+  export let value = "";
+  export let type = "text";
 </script>
 
 <style>
@@ -45,6 +46,6 @@
     <textarea id="description" {rows} {value} on:input />
     <!-- on:input forwards data back to parent -->
   {:else}
-    <input type="text" {id} {value} on:input />
+    <input {type} {id} {value} on:input />
   {/if}
 </div>
