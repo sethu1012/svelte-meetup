@@ -80,6 +80,11 @@
   .outline.success:active {
     background: #c2ffd1;
   }
+
+  .outline.success:hover,
+  .outline.success:active {
+    background: #c2ffd1;
+  }
 </style>
 
 {#if href}
