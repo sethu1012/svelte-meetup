@@ -1,5 +1,5 @@
 <script>
-  export let controlType = "input";
+  export let controlType = null;
   export let id = "";
   export let label = "";
   export let rows = 3;

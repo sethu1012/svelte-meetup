@@ -15,4 +15,6 @@ script:
 # after_failure:
 # before_deploy:
 # deploy:
+#   provider: netlify
+#   site: a1b775e9-1571-4737-8c4a-5ce45b35ffe7
 # after_deploy:
